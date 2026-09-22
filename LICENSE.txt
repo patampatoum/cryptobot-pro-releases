@@ -1,0 +1,30 @@
+CryptoBot Pro - Proprietary Software License
+
+Copyright (c) 2025-2026 CryptoBot Pro. All rights reserved.
+
+This software is licensed, not sold. By purchasing a subscription,
+you are granted a non-exclusive, non-transferable license to use
+this software for personal or commercial trading purposes.
+
+The software may also be used under a 90-day trial that includes
+every feature, after which a subscription is required to keep
+using it.
+
+RESTRICTIONS:
+- You may not redistribute, resell, or share this software
+- You may not reverse engineer, decompile, or modify this software
+- You may not remove any proprietary notices or labels
+
+PACKAGE MAINTAINERS:
+As an exception to the restriction on redistribution, maintainers of
+package repositories such as winget, Chocolatey, the AUR and
+AppImageHub may publish a manifest or recipe that references
+CryptoBot Pro, provided that it points at the official installer URLs
+published at https://github.com/patampatoum/cryptobot-pro-releases
+and that the binaries are not rehosted, repackaged or modified.
+Write to CryptoBro_Bot_Pro@proton.me to obtain this permission in
+writing.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+
+For support: CryptoBro_Bot_Pro@proton.me
