@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>cryptobot-pro</id>
+    <version>3.0.6</version>
+    <packageSourceUrl>https://github.com/patampatoum/cryptobot-pro-releases/tree/main/packaging/chocolatey</packageSourceUrl>
+    <owners>patampatoum</owners>
+    <title>CryptoBot Pro</title>
+    <authors>CryptoBot Pro</authors>
+    <projectUrl>https://gribbot-btc-usdc.netlify.app</projectUrl>
+    <copyright>Copyright (c) 2025-2026 CryptoBot Pro</copyright>
+    <licenseUrl>https://gribbot-btc-usdc.netlify.app/terms.html</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://gribbot-btc-usdc.netlify.app/docs/Setup%20Guide.html</docsUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/patampatoum/cryptobot-pro-releases@main/media/icon.png</iconUrl>
+    <bugTrackerUrl>https://github.com/patampatoum/cryptobot-pro-releases/issues</bugTrackerUrl>
+    <tags>cryptobot-pro bitcoin btc usdc grid-trading trading-bot crypto electron trial license admin</tags>
+    <summary>Desktop BTC/USDC spot grid trading bot that runs on your own machine.</summary>
+    <description><![CDATA[
+This package installs CryptoBot Pro. It is trial software: every feature is free for 90 days, after which a paid subscription is required to keep trading. Payment details are collected when the trial starts and the first charge is on day 91. Plans are subscriptions renewed until cancelled: 5.99 USD per month, 29.99 USD billed every 6 months and 49.99 USD billed yearly, plus VAT where applicable. Every plan has the same features and covers one machine.
+
+CryptoBot Pro is a desktop grid trading bot for BTC/USDC spot (BTC/USDT on Aster). The interface is Electron and the trading engine is a local Go binary. There is no CryptoBot Pro account to create. The bot talks to the exchange directly. The app checks GitHub for updates. Once a day, and when you activate the licence, it sends your email to a licence function run by the developer, which asks Stripe whether your subscription is active and neither stores nor logs the email. Telegram is contacted only if you add a Telegram bot token. There is no telemetry.
+
+Your exchange keys are stored in plain text in a config file on your own disk. On Binance, Kraken, MEXC, KuCoin and Bitvavo, create the key with trading allowed and withdrawals disabled, and add an IP whitelist where the exchange offers one. On Hyperliquid, connect an API wallet, which can place and cancel orders but cannot withdraw to another address. On Aster the bot signs with an API wallet key: allow spot trading only, disable withdrawals where the option is offered, and keep only the trading capital on that account.
+
+One pair, one strategy: a limit buy below the market, then a sell above the buy price once it fills. A cycle closes only when its sell fills above its buy, so a losing position stays open instead of being sold at a loss. The bot uses no leverage, shorts, futures or signals.
+
+Exchanges: Hyperliquid, Bitvavo, Aster, Kraken, MEXC, KuCoin, and Binance outside the EU. Your machine has to be running for the bot to trade.
+
+64-bit Windows only. Installing or upgrading through Chocolatey closes CryptoBot Pro if it is running, then starts it again. The application is closed source and the installer is not code signed. On Windows, the application can download and install its own updates when you click Update, so the version installed by this package may be behind the one that is running. This package downloads the installer from the vendor's GitHub releases page and verifies its SHA256 checksum.
+
+CryptoBot Pro is a software tool. It is not an investment service and nothing here is financial advice. A grid strategy can lose money, in particular during a long drawdown.
+]]></description>
+    <releaseNotes>https://github.com/patampatoum/cryptobot-pro-releases/releases/tag/v3.0.6</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
