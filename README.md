@@ -112,21 +112,21 @@ are taken when the trial starts, and the first charge is on day 91.
 
 ## Live results
 
-My own money, net of real fees. The figures below were generated on 22 September 2026, and the last
-cycle they include closed on 21 September 2026.
+My own money, net of real fees. The figures below were generated on 16 October 2026, and the last
+cycle they include closed on 15 October 2026.
 
-3,732 closed cycles since 19 December 2025, for +413.36 USDC net (472.40 gross, 59.04 paid in fees).
-That is 0.1108 USDC net per cycle on average, on a capital base of 4,676 USDC: 8.84 % since the
-start, 2.49 % over 30 days, 0.85 % over the last 7 days. This is nine months of a single grid on a
-single pair, and the last 30 days alone account for 116.66 of the 413.36 USDC, a little over a
+4,278 closed cycles since 19 December 2025, for +496.87 USDC net (562.03 gross, 65.16 paid in fees).
+That is 0.1161 USDC net per cycle on average, on a capital base of 4,750 USDC: 10.46 % since the
+start, 2.52 % over 30 days, 0.35 % over the last 7 days. This is ten months of a single grid on a
+single pair, and the last 30 days alone account for 119.68 of the 496.87 USDC, a little under a
 quarter of the total, so the recent figures are not a yearly rate.
 
-All 3,732 closed cycles are winners, which is exactly what the rule above produces: a cycle closes
+All 4,278 closed cycles are winners, which is exactly what the rule above produces: a cycle closes
 only when its sell fills above its buy, and losing positions stay open instead.
 
 The Hyperliquid part is verifiable on chain at 0xc2E2c523A41F66b09448AC432BEf01ab23cDF2Bd on
-hypurrscan.io, and covers 1,598 of those cycles. The other 2,134 ran on Binance (942), Kraken
-(498), Aster (325), MEXC (197) and Bitvavo (172); Hyperliquid is the only one where a published
+hypurrscan.io, and covers 1,862 of those cycles. The other 2,416 ran on Binance (942), Kraken
+(498), Aster (474), Bitvavo (305) and MEXC (197); Hyperliquid is the only one where a published
 address lets you check the cycles yourself. KuCoin is supported by the app, but I have no cycles of
 my own there.
 
