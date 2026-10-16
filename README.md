@@ -37,9 +37,10 @@ withdrawals disabled. The bot never needs withdrawal rights. Hyperliquid and Ast
 since 3.0.6 you connect Hyperliquid with either an API wallet (created in the Hyperliquid app under
 More, then API, valid for 180 days at most) or the private key of your wallet. An API wallet can
 place and cancel orders but cannot withdraw to another address, while the private key of your
-wallet, like the wallet key Aster signs with, cannot be limited to trading. Hyperliquid has no IP
-whitelist, so a stolen API wallet key can still place orders: on both exchanges, use a wallet that
-holds nothing but your trading capital.
+wallet cannot be limited to trading. Aster also signs with an API wallet key: allow spot trading
+only and disable withdrawals where the option is offered. Hyperliquid has no IP whitelist, so a
+stolen API wallet key can still place orders: on both exchanges, use a wallet that holds nothing
+but your trading capital.
 Your machine has to be running for the bot to trade.
 
 ## Install
