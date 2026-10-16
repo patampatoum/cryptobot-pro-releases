@@ -34,31 +34,34 @@ Hyperliquid, Bitvavo, Aster, Kraken, MEXC, KuCoin, and Binance outside the EU.
 
 On Binance, Kraken, MEXC, KuCoin and Bitvavo, create the API key with trading allowed and
 withdrawals disabled. The bot never needs withdrawal rights. Hyperliquid and Aster work differently:
-the bot authenticates by signing with a wallet key, and a wallet key cannot be restricted to trading
-only, so use a wallet that holds nothing but your trading capital. Your machine has to be running
-for the bot to trade.
+since 3.0.6 you connect Hyperliquid with either an API wallet (created in the Hyperliquid app under
+More, then API, valid for 180 days at most) or the private key of your wallet. An API wallet can
+place and cancel orders but cannot withdraw to another address, while the private key of your
+wallet, like the wallet key Aster signs with, cannot be limited to trading. Hyperliquid has no IP
+whitelist, so a stolen API wallet key can still place orders: on both exchanges, use a wallet that
+holds nothing but your trading capital.
+Your machine has to be running for the bot to trade.
 
 ## Install
 
-Windows x64: download `CryptoBot-Pro-Setup-3.0.2.exe` and run it. The binaries are not code signed,
+Windows x64: download `CryptoBot-Pro-Setup-3.0.6.exe` and run it. The binaries are not code signed,
 so SmartScreen shows a warning. Click "More info", then "Run anyway".
 
-Debian and Ubuntu: `sudo apt install ./cryptobot-pro_3.0.2_amd64.deb`
+Debian and Ubuntu: `sudo apt install ./cryptobot-pro_3.0.6_amd64.deb`
 
-Other Linux: download `CryptoBot-Pro-3.0.2.AppImage`, then `chmod +x CryptoBot-Pro-3.0.2.AppImage`
+Other Linux: download `CryptoBot-Pro-3.0.6.AppImage`, then `chmod +x CryptoBot-Pro-3.0.6.AppImage`
 and run it. On Ubuntu 22.04 and later, install FUSE 2 first: `sudo apt install libfuse2`, or
 `sudo apt install libfuse2t64` on releases that ship it under that name, such as Ubuntu 24.04.
 Without it the launch fails with an error about libfuse.so.2.
 
-macOS on Apple Silicon: `CryptoBot-Pro-3.0.2-arm64.dmg`. macOS on Intel: `CryptoBot-Pro-3.0.2.dmg`.
+macOS on Apple Silicon: `CryptoBot-Pro-3.0.6-arm64.dmg`. macOS on Intel: `CryptoBot-Pro-3.0.6.dmg`.
 The build is not notarized, so macOS blocks the first launch. Open System Settings, go to Privacy
 and Security, allow the app there, then open it again.
 
-Auto-update works on Windows. On the .deb package and on the macOS builds the app does not update
-itself, but it checks this releases page once a day and shows a banner with a link to the new
-version. On the AppImage, 3.0.2 does neither: it looks for an update file that has never been
-published, fails silently, and shows no banner, so you have to watch the releases yourself. The feed
-is https://github.com/patampatoum/cryptobot-pro-releases/releases.atom
+Auto-update works on Windows and on the AppImage, the latter from 3.0.4 on. The .deb package and
+the macOS builds do not update themselves, but the app checks this releases page once a day and
+shows a banner with a link to the new version. The feed is
+https://github.com/patampatoum/cryptobot-pro-releases/releases.atom
 
 ## For package maintainers
 
@@ -71,14 +74,14 @@ Windows is x86_64 only, there is no arm64 Windows build. Linux ships as a .deb f
 AppImage for x86_64, with no arm64 and no 32-bit build. macOS ships as two .dmg files, one for Apple
 Silicon and one for Intel, neither signed nor notarized.
 
-SHA-256 for 3.0.2:
+SHA-256 for 3.0.6:
 
 ```
-CryptoBot-Pro-Setup-3.0.2.exe    4e197ef517da3fcbe4e0b487cba0e60607da02f9a9b76c50da68d1268bc0f472
-cryptobot-pro_3.0.2_amd64.deb    70b6ea28ea3666a7d3da27788878040dd5c987d997030690832400219727d6a1
-CryptoBot-Pro-3.0.2.AppImage     b8a76e8714f47ccf4b09dd72239ab80b68f991076959b66728cee3f11f26903e
-CryptoBot-Pro-3.0.2-arm64.dmg    05065eb7f0375de301a6757e3486e8fd2107f9457f04f15dfc48fa7a5fc0b8e9
-CryptoBot-Pro-3.0.2.dmg          162f66bd5546e0ff0bc839f789dc1c2207ad8b3a661e38c2cb0cbf9497ab101a
+CryptoBot-Pro-Setup-3.0.6.exe    290454a901a532d4231c33b839332283af08e5399085e9be1b493f273cb6691a
+cryptobot-pro_3.0.6_amd64.deb    6d8b7551d48db9cb14797ac9326070f07501389e67a93bb612da454859752d44
+CryptoBot-Pro-3.0.6.AppImage     9f0843f57199eb98712100215a8b9d4781cdd65050513ed94305f694b1ae0b52
+CryptoBot-Pro-3.0.6-arm64.dmg    18ed918e349bc3d4939204541b5d39e4856656ed2f55349ec9726f6fb09ac48e
+CryptoBot-Pro-3.0.6.dmg          0a2fec231473454264d4f19cc028ac5e5df288bc49e06367e12ad2ef165bf802
 ```
 
 Packaging terms are in the "License and redistribution" section below.
@@ -96,6 +99,9 @@ theme.
 
 An analytics dashboard, including Drop Cover: how far BTC can fall before a given exchange runs out
 of free USDC.
+
+Since 3.0.6, Hyperliquid can be connected with an API wallet, which can trade but cannot withdraw;
+the private key of your wallet still works.
 
 ## Price
 
