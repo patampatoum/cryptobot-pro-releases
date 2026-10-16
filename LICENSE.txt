@@ -15,15 +15,16 @@ RESTRICTIONS:
 - You may not reverse engineer, decompile, or modify this software
 - You may not remove any proprietary notices or labels
 
-PACKAGE MAINTAINERS:
-As an exception to the restriction on redistribution, maintainers of
-package repositories such as winget, Chocolatey, the AUR and
-AppImageHub may publish a manifest or recipe that references
-CryptoBot Pro, provided that it points at the official installer URLs
-published at https://github.com/patampatoum/cryptobot-pro-releases
-and that the binaries are not rehosted, repackaged or modified.
-Write to CryptoBro_Bot_Pro@proton.me to obtain this permission in
-writing.
+PACKAGE MAINTAINERS AND DOWNLOAD SITES:
+As an exception to the restriction on redistribution, package
+repositories (such as winget, Chocolatey, the AUR, Homebrew and
+AppImageHub) and software download sites may list CryptoBot Pro and
+either point at the official files published at
+https://github.com/patampatoum/cryptobot-pro-releases or mirror those
+files unchanged. A recipe that downloads an official file and unpacks
+it at install time, such as an AUR -bin PKGBUILD, is allowed. The
+binaries must not be modified or bundled with other software. Write
+to CryptoBro_Bot_Pro@proton.me to obtain this permission in writing.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 
