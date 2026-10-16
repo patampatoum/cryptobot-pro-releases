@@ -141,10 +141,12 @@ Open an issue here, or write to CryptoBro_Bot_Pro@proton.me
 CryptoBot Pro is proprietary software. The terms are in LICENSE.txt in this repository and at
 https://gribbot-btc-usdc.netlify.app/terms.html
 
-Package maintainers: you may reference CryptoBot Pro in winget, Chocolatey, the AUR or AppImageHub,
-as long as the manifest points at the official installer URLs on this releases page. Do not rehost,
-repackage or modify the binaries. Write to CryptoBro_Bot_Pro@proton.me if you want that permission
-in writing.
+Package maintainers and download sites: package repositories (such as winget, Chocolatey, the AUR,
+Homebrew and AppImageHub) and software download sites may list CryptoBot Pro and either point at
+the official files on this releases page or mirror those files unchanged. A recipe that downloads
+an official file and unpacks it at install time, such as an AUR -bin PKGBUILD, is allowed. The
+binaries must not be modified or bundled with other software. Write to CryptoBro_Bot_Pro@proton.me
+if you want that permission in writing.
 
 ## Legal
 
