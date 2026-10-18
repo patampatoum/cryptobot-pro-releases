@@ -57,7 +57,18 @@ Without it the launch fails with an error about libfuse.so.2.
 
 macOS on Apple Silicon: `CryptoBot-Pro-3.0.6-arm64.dmg`. macOS on Intel: `CryptoBot-Pro-3.0.6.dmg`.
 The build is not notarized, so macOS blocks the first launch. Open System Settings, go to Privacy
-and Security, allow the app there, then open it again.
+and Security, allow the app there, then open it again. Homebrew users can install the same disk
+image from the developer's tap:
+
+```
+brew install --cask patampatoum/tap/cryptobot-pro
+xattr -dr com.apple.quarantine "/Applications/CryptoBot Pro.app"
+```
+
+Homebrew quarantines the download, and the quarantine flag stops the trading engine inside the
+app, so run the `xattr` line after every install and every upgrade. Upgrade with
+`brew update && brew upgrade --cask patampatoum/tap/cryptobot-pro`. The cask source is at
+https://github.com/patampatoum/homebrew-tap.
 
 Auto-update works on Windows and on the AppImage, the latter from 3.0.4 on. The .deb package and
 the macOS builds do not update themselves, but the app checks this releases page once a day and
