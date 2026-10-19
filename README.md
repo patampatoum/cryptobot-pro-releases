@@ -46,7 +46,12 @@ Your machine has to be running for the bot to trade.
 ## Install
 
 Windows x64: download `CryptoBot-Pro-Setup-3.0.6.exe` and run it. The binaries are not code signed,
-so SmartScreen shows a warning. Click "More info", then "Run anyway".
+so SmartScreen shows a warning. Click "More info", then "Run anyway". Chocolatey users can run
+`choco install cryptobot-pro`, which downloads the same installer and runs it silently, and upgrade
+with `choco upgrade cryptobot-pro`. Installing or upgrading through Chocolatey closes CryptoBot Pro
+if it is running and opens it when the installer finishes; if the app already updated itself to a
+newer version, `choco upgrade` leaves it alone. The package source is in `packaging/chocolatey` of
+this repository and the listing is at https://community.chocolatey.org/packages/cryptobot-pro.
 
 Debian and Ubuntu: `sudo apt install ./cryptobot-pro_3.0.6_amd64.deb`
 
