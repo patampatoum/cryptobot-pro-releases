@@ -23,11 +23,12 @@ market. Once that buy fills, the next update places a sell above the buy price. 
 the cycle closes and the spread minus fees is booked. No prediction, no signals, no leverage, no
 shorts, no futures.
 
-A cycle closes only when its sell fills above its buy, so a losing position stays open instead of
-being sold at a loss. If BTC leaves the bottom of your range, the bot keeps buying on the way down,
-the cycles go quiet, and you hold spot BTC bought higher until the price comes back. The risk you
-are taking is that your money stays locked up in BTC bought too high, for as long as it takes. It
-does not protect you from a bear market. There is no liquidation, because there is no leverage.
+The bot never places a sell below the buy price plus the expected fees of both legs, so a cycle
+closes only at a gain, and a losing position stays open instead of being sold at a loss. If BTC
+leaves the bottom of your range, the bot keeps buying on the way down, the cycles go quiet, and you
+hold spot BTC bought higher until the price comes back. The risk you are taking is that your money
+stays locked up in BTC bought too high, for as long as it takes. It does not protect you from a
+bear market. There is no liquidation, because there is no leverage.
 
 ## Exchanges
 
@@ -139,8 +140,8 @@ start, 2.32 % over 30 days, 0.34 % over the last 7 days. This is ten months of a
 single pair, and the last 30 days alone account for 110.29 of the 507.98 USDC, a little over a
 fifth of the total, so the recent figures are not a yearly rate.
 
-All 4,359 closed cycles are winners, which is exactly what the rule above produces: a cycle closes
-only when its sell fills above its buy, and losing positions stay open instead.
+All 4,359 closed cycles are winners, which is exactly what the rule above produces: no sell is
+placed below its buy price plus the expected fees of both legs, and losing positions stay open.
 
 The Hyperliquid part is verifiable on chain at 0xc2E2c523A41F66b09448AC432BEf01ab23cDF2Bd on
 hypurrscan.io, and covers 1,912 of those cycles. The other 2,447 ran on Binance (942), Kraken
