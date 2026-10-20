@@ -13,8 +13,8 @@ if ($installedVersion -and $packageVersion -and $installedVersion -ge $packageVe
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   fileType       = 'exe'
-  url64bit       = 'https://github.com/patampatoum/cryptobot-pro-releases/releases/download/v3.0.6/CryptoBot-Pro-Setup-3.0.6.exe'
-  checksum64     = '290454a901a532d4231c33b839332283af08e5399085e9be1b493f273cb6691a'
+  url64bit       = 'https://github.com/patampatoum/cryptobot-pro-releases/releases/download/v3.0.7/CryptoBot-Pro-Setup-3.0.7.exe'
+  checksum64     = 'c51fa956df4a66a8c1ede1194c99da6b9bb619591f45543dfef3c9551c35ff97'
   checksumType64 = 'sha256'
   silentArgs     = '/S --force-run'
   validExitCodes = @(0)

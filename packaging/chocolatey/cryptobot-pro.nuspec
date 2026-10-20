@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>cryptobot-pro</id>
-    <version>3.0.6</version>
+    <version>3.0.7</version>
     <packageSourceUrl>https://github.com/patampatoum/cryptobot-pro-releases/tree/main/packaging/chocolatey</packageSourceUrl>
     <owners>patampatoum</owners>
     <title>CryptoBot Pro</title>
@@ -27,11 +27,11 @@ One pair, one strategy: a limit buy below the market, then a sell above the buy 
 
 Exchanges: Hyperliquid, Bitvavo, Aster, Kraken, MEXC, KuCoin, and Binance outside the EU. Your machine has to be running for the bot to trade.
 
-64-bit Windows only. Installing or upgrading through Chocolatey closes CryptoBot Pro if it is running, then starts it again. The application is closed source and the installer is not code signed. On Windows, the application can download and install its own updates when you click Update, so the version installed by this package may be behind the one that is running. This package downloads the installer from the vendor's GitHub releases page and verifies its SHA256 checksum.
+64-bit Windows only. Installing or upgrading through Chocolatey closes CryptoBot Pro if it is running and opens it when the installer finishes. The application is closed source and the installer is not code signed. On Windows, the application can download and install its own updates when you click Update, so the version installed by this package may be behind the one that is running. This package downloads the installer from the vendor's GitHub releases page and verifies its SHA256 checksum.
 
 CryptoBot Pro is a software tool. It is not an investment service and nothing here is financial advice. A grid strategy can lose money, in particular during a long drawdown.
 ]]></description>
-    <releaseNotes>https://github.com/patampatoum/cryptobot-pro-releases/releases/tag/v3.0.6</releaseNotes>
+    <releaseNotes>https://github.com/patampatoum/cryptobot-pro-releases/releases/tag/v3.0.7</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
