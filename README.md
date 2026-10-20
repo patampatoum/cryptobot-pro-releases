@@ -2,11 +2,12 @@
 
 Desktop grid trading bot for BTC spot. The pair is BTC/USDC everywhere except Aster, which trades
 BTC/USDT. The interface is Electron, the trading engine is a Go binary, and both run on your own
-machine. There is no server of mine in the loop: the app talks to your exchange, and at most once a
-day it calls Stripe with your email address to check that the subscription is still active. There is
-no account to create. Your exchange API keys, and the wallet key used to sign on Hyperliquid and
-Aster, sit in clear text in a config file on your disk, readable by anything running under your user
-account.
+machine. There is no server of mine in the trading loop: the app talks to your exchange directly.
+Shortly after start-up and then every 24 hours while it is open, it sends the email address of your
+subscription, and nothing else, to a function on the website, which asks Stripe whether the
+subscription is still active; the license expires when it is not. There is no account to create.
+Your exchange API keys, and the wallet key used to sign on Hyperliquid and Aster, sit in clear text
+in a config file on your disk, readable by anything running under your user account.
 
 This repository holds the release binaries. The application is closed source.
 
@@ -45,7 +46,7 @@ Your machine has to be running for the bot to trade.
 
 ## Install
 
-Windows x64: download `CryptoBot-Pro-Setup-3.0.6.exe` and run it. The binaries are not code signed,
+Windows x64: download `CryptoBot-Pro-Setup-3.0.7.exe` and run it. The binaries are not code signed,
 so SmartScreen shows a warning. Click "More info", then "Run anyway". Chocolatey users can run
 `choco install cryptobot-pro`, which downloads the same installer and runs it silently, and upgrade
 with `choco upgrade cryptobot-pro`. Installing or upgrading through Chocolatey closes CryptoBot Pro
@@ -53,14 +54,14 @@ if it is running and opens it when the installer finishes; if the app already up
 newer version, `choco upgrade` leaves it alone. The package source is in `packaging/chocolatey` of
 this repository and the listing is at https://community.chocolatey.org/packages/cryptobot-pro.
 
-Debian and Ubuntu: `sudo apt install ./cryptobot-pro_3.0.6_amd64.deb`
+Debian and Ubuntu: `sudo apt install ./cryptobot-pro_3.0.7_amd64.deb`
 
-Other Linux: download `CryptoBot-Pro-3.0.6.AppImage`, then `chmod +x CryptoBot-Pro-3.0.6.AppImage`
+Other Linux: download `CryptoBot-Pro-3.0.7.AppImage`, then `chmod +x CryptoBot-Pro-3.0.7.AppImage`
 and run it. On Ubuntu 22.04 and later, install FUSE 2 first: `sudo apt install libfuse2`, or
 `sudo apt install libfuse2t64` on releases that ship it under that name, such as Ubuntu 24.04.
 Without it the launch fails with an error about libfuse.so.2.
 
-macOS on Apple Silicon: `CryptoBot-Pro-3.0.6-arm64.dmg`. macOS on Intel: `CryptoBot-Pro-3.0.6.dmg`.
+macOS on Apple Silicon: `CryptoBot-Pro-3.0.7-arm64.dmg`. macOS on Intel: `CryptoBot-Pro-3.0.7.dmg`.
 The build is not notarized, so macOS blocks the first launch. Open System Settings, go to Privacy
 and Security, allow the app there, then open it again. Homebrew users can install the same disk
 image from the developer's tap:
@@ -91,14 +92,14 @@ Windows is x86_64 only, there is no arm64 Windows build. Linux ships as a .deb f
 AppImage for x86_64, with no arm64 and no 32-bit build. macOS ships as two .dmg files, one for Apple
 Silicon and one for Intel, neither signed nor notarized.
 
-SHA-256 for 3.0.6:
+SHA-256 for 3.0.7:
 
 ```
-CryptoBot-Pro-Setup-3.0.6.exe    290454a901a532d4231c33b839332283af08e5399085e9be1b493f273cb6691a
-cryptobot-pro_3.0.6_amd64.deb    6d8b7551d48db9cb14797ac9326070f07501389e67a93bb612da454859752d44
-CryptoBot-Pro-3.0.6.AppImage     9f0843f57199eb98712100215a8b9d4781cdd65050513ed94305f694b1ae0b52
-CryptoBot-Pro-3.0.6-arm64.dmg    18ed918e349bc3d4939204541b5d39e4856656ed2f55349ec9726f6fb09ac48e
-CryptoBot-Pro-3.0.6.dmg          0a2fec231473454264d4f19cc028ac5e5df288bc49e06367e12ad2ef165bf802
+CryptoBot-Pro-Setup-3.0.7.exe    c51fa956df4a66a8c1ede1194c99da6b9bb619591f45543dfef3c9551c35ff97
+cryptobot-pro_3.0.7_amd64.deb    c775f1c536eeda8a1380af3bb3564b437cc98edebfbbcc861d9d289894304f1c
+CryptoBot-Pro-3.0.7.AppImage     2a19ea545a95b2d70016e0f9a5f46370ce09938d63cb9639e4c3497c15537139
+CryptoBot-Pro-3.0.7-arm64.dmg    2f105af0cc8ec9a96bab92d33a9ea7d459bbdb05555408ded483942aabd62012
+CryptoBot-Pro-3.0.7.dmg          ffecf06b03d514e333acb4c97f04b450f7b95cac47b15131750406c40c3798cd
 ```
 
 Packaging terms are in the "License and redistribution" section below.
@@ -129,21 +130,21 @@ are taken when the trial starts, and the first charge is on day 91.
 
 ## Live results
 
-My own money, net of real fees. The figures below were generated on 16 October 2026, and the last
-cycle they include closed on 15 October 2026.
+My own money, net of real fees. The figures below were generated on 20 October 2026, and the last
+cycle they include closed on 20 October 2026.
 
-4,278 closed cycles since 19 December 2025, for +496.87 USDC net (562.03 gross, 65.16 paid in fees).
-That is 0.1161 USDC net per cycle on average, on a capital base of 4,750 USDC: 10.46 % since the
-start, 2.52 % over 30 days, 0.35 % over the last 7 days. This is ten months of a single grid on a
-single pair, and the last 30 days alone account for 119.68 of the 496.87 USDC, a little under a
-quarter of the total, so the recent figures are not a yearly rate.
+4,359 closed cycles since 19 December 2025, for +507.98 USDC net (573.93 gross, 65.95 paid in fees).
+That is 0.1165 USDC net per cycle on average, on a capital base of 4,761 USDC: 10.67 % since the
+start, 2.32 % over 30 days, 0.34 % over the last 7 days. This is ten months of a single grid on a
+single pair, and the last 30 days alone account for 110.29 of the 507.98 USDC, a little over a
+fifth of the total, so the recent figures are not a yearly rate.
 
-All 4,278 closed cycles are winners, which is exactly what the rule above produces: a cycle closes
+All 4,359 closed cycles are winners, which is exactly what the rule above produces: a cycle closes
 only when its sell fills above its buy, and losing positions stay open instead.
 
 The Hyperliquid part is verifiable on chain at 0xc2E2c523A41F66b09448AC432BEf01ab23cDF2Bd on
-hypurrscan.io, and covers 1,862 of those cycles. The other 2,416 ran on Binance (942), Kraken
-(498), Aster (474), Bitvavo (305) and MEXC (197); Hyperliquid is the only one where a published
+hypurrscan.io, and covers 1,912 of those cycles. The other 2,447 ran on Binance (942), Kraken
+(498), Aster (495), Bitvavo (315) and MEXC (197); Hyperliquid is the only one where a published
 address lets you check the cycles yourself. KuCoin is supported by the app, but I have no cycles of
 my own there.
 
